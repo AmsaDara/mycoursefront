@@ -1,0 +1,46 @@
+<app-page-header icon="home">
+    <h2>Home</h2>
+    
+    <img class="image" src="../../../assets/images/logos.png" alt="" srcset="">
+
+    <button
+      routerLink="/courses"
+      mat-flat-button
+      color="primary"
+      class="action"
+    >
+      <mat-icon class="mr-2">cast_for_education</mat-icon>
+      <span>Go courses</span>
+    </button>
+  </app-page-header>
+
+  <div style="padding: 0 20px">
+    <div id="one">
+      <div class="oneone">
+        <h2>Lorem ipsum dolor sit amet</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, 
+            adipisicing elit. Quas necessitatibus 
+            accusamus error doloribus a veritatis 
+            nulla minus minima perferendis aliquid 
+            ratione accusantium fugiat illo, 
+            amet in totam laborum? Sunt, aliquid.
+        </p>
+      </div>
+      <div class="twotwo">
+      <img src="../../../assets/images/elearning.png" alt="" srcset="">
+      </div>
+    </div>
+    
+  </div>
+  <hr>
+  
+  <mat-grid-list cols="3" rowHeight="100px">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+      {{tile.text}}
+    </mat-grid-tile>
+  </mat-grid-list>
+  

@@ -1,0 +1,176 @@
+<div class="full-page">
+	<div class="page-block" flex>
+		<div class="side-block1 text-center" flex-1>
+			<img src="https://www.pngitem.com/pimgs/m/438-4389117_elearning-icon-svg-hd-png-download.png" alt="Company or Product Logo" class="logo" />
+      <div class="sidebar-footer">
+        <figure><img src="https://image.ibb.co/kzkCme/Logo_Samples2_91_min.jpg" alt=""></figure>
+        <p>By logging in you agree to our <br> <a routerLink="/">Terms and Conditions</a> and <a routerLink="/">Privacy Policy</a></p>
+      </div>
+    </div>
+    <div class="side-block2" flex-1>
+      <ng-container *ngIf="showRegisterForm">
+        <h4>Register an Account</h4>
+        <p>Pour enregistrer un compte elearning, entrez les informations requises ci-dessous.</p>
+        <p>Vous devrez vérifier votre adresse e-mail pour continuer l'inscription.</p>
+        <form [formGroup]="registerForm">
+          <div class="form-field-set">
+            <div class="form-group ">
+              <mat-icon>email </mat-icon>
+              <mat-form-field>
+                <input matInput placeholder="Email Address" formControlName="email" type="email" required>
+              </mat-form-field>
+             
+            </div>
+            <div class="already-have-account">
+              Vous avez déjà un compte?<a color="primary" routerLink="/signin" class="links">Log In</a>
+            </div>
+          </div>
+          <div class="next-button">
+            <button [disabled]="!registerForm.valid" mat-raised-button color="primary" (click)="onSubmit()">NEXT</button>
+          </div>
+      </form>	
+      </ng-container>
+      <ng-container *ngIf="showVerificationForm">
+        <h4>Verify Email Address</h4>
+        <p>Un courriel a été envoyé à {{registerForm.value.email}}. Entrez le code de vérification ou suivez le lien fourni pour continuer.</p>
+        <form [formGroup]="registerForm">
+          <div class="form-field-set">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Verification Code" formControlName="verificationCode" required></mat-form-field>
+          </div>
+          <div class="flex-center">
+            <button mat-button (click)="backtoRegister()">BACK</button>
+            <button [disabled]="!registerForm.valid" mat-raised-button color="primary" (click)="onSubmit()">NEXT</button>            
+          </div>
+        </form>	
+      </ng-container>
+
+      <ng-container *ngIf="registerForm">
+        <h4>Create Account</h4>
+        <p>Pour compléter votre compte elearning, entrez les informations requises ci-dessous.</p>
+        <form [formGroup]="registerForm">
+          <div class="form-field-set">
+            <div class="form-group">
+              <mat-icon color="primary" matPrefix>person </mat-icon>
+              <mat-form-field>
+                <input matInput type="text" placeholder="fullusername" formControlName="fullusername" required>
+                
+              </mat-form-field>
+            </div>
+            <div class="form-group flex-center" flex>
+            
+              <mat-form-field >
+                <mat-icon color="primary" matPrefix>email</mat-icon>
+                <input type="email" matInput placeholder="email" formControlName="email" required>
+                
+              </mat-form-field>
+            
+              <mat-icon color="primary" matPrefix>compare_arrows</mat-icon>
+              <mat-form-field>
+                <input matInput type="text" placeholder="Title/Role" formControlName="role">
+                
+              </mat-form-field>
+              
+              
+              
+            </div>
+            
+            <!-- <div class="form-group" flex>
+              <mat-icon>accessibility</mat-icon>
+              <mat-form-field>
+                <select matNativeControl placeholder="City" formControlName="city" required>
+                  <option value="Dakar">Dakar</option>
+                  <option value="Saint Louis">Saint Louis</option>
+                  <option value="Ziguinchor">Ziguinchor</option>
+                  <option value="Thies">Thies</option>
+                </select>
+              </mat-form-field>
+            </div> -->
+            
+            <div class="form-group" flex align-center>
+              <mat-icon color="primary" matPrefix>call</mat-icon>
+              <mat-form-field>
+                <input matInput type="tel" placeholder="Phone" formControlName="phone" required>
+                
+              </mat-form-field>
+              
+              <mat-icon color="primary" matPrefix>accessibility</mat-icon>
+              <mat-form-field>
+                <select matNativeControl placeholder="City" formControlName="city" required>
+                  <option value="Dakar">Dakar</option>
+                  <option value="Saint Louis">Saint Louis</option>
+                  <option value="Ziguinchor">Ziguinchor</option>
+                  <option value="Thies">Thies</option>
+                </select>
+                
+              </mat-form-field>
+              
+            </div>
+            <div class="form-group flex-center">
+              <mat-icon color="primary" matPrefix>vpn_key</mat-icon>
+              <mat-form-field>
+                <input matInput type="password" placeholder="Password" formControlName="password" required>
+                
+              </mat-form-field>
+              <!-- <mat-icon color="primary" matPrefix>vpn_key</mat-icon>
+              <mat-form-field>
+                <input matInput type="text" placeholder="Confirm Password" formControlName="confirmPassword" required>
+              </mat-form-field> -->
+            </div>
+          </div>
+          <div class="flex-center">
+            <!-- <button mat-button (click)="onSubmit()">BACK</button> -->
+            <button mat-raised-button color="primary" (click)="onSubmit()">NEXT</button>            
+          </div>
+        </form>	
+      </ng-container> 
+    </div>
+	</div>
+</div>
+
+
+
+
+<!-- <form [formGroup]="registerForm" novalidate>
+    <mat-card class="shipping-card">
+      <mat-card-header>
+        <mat-card-title>Please Register</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-icon color="primary" matPrefix>person</mat-icon>
+              <input matInput placeholder="Full Name" formControlName="fullusername" required>
+              <mat-error *ngIf="registerForm.controls['fullusername'].hasError('required')">
+                Full Name is required <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-icon color="primary" matPrefix>email</mat-icon>
+              <input type="email" matInput placeholder="email" formControlName="email" required>
+              <mat-error *ngIf="registerForm.controls['email'].hasError('required')">
+                email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-icon color="primary" matPrefix>locked</mat-icon>
+              <input type="password" matInput placeholder="password" formControlName="password" required>
+              <mat-error *ngIf="registerForm.controls['password'].hasError('required')">
+                Password is required <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+      </mat-card-actions>
+    </mat-card>
+  </form> -->

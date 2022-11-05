@@ -1,0 +1,26 @@
+
+.content{
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 2px solid brown;
+}
+
+section{
+    // float: right;
+    background: #ccc;
+    width: 30%;
+}
+
+img {
+
+    width: 80%;
+    padding: 4px;
+    margin: 7px;
+}
+.content_course{
+    width: 65%;
+    height: auto;
+}

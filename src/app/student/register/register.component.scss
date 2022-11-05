@@ -1,0 +1,164 @@
+.full-width {
+    width: 100%;
+  }
+  
+  .shipping-card {
+    min-width: 120px;
+    margin: 20px auto;
+  }
+  
+  .mat-radio-button {
+    display: block;
+    margin: 5px 0;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .col {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .col:last-child {
+    margin-right: 0;
+  }
+  
+  
+  
+  
+  [flex]{
+    display: flex;
+  }
+  [flex-1]{
+    flex: 1;
+  }
+  .page-block{
+    min-height: 100vh;
+  }
+  .sidebar-footer{
+    margin-top: 25%;
+  }
+  .sidebar-footer {
+    figure {
+      strong{
+        text-transform: uppercase;
+        display: block;
+        font-size: 11px;
+        margin-top: 5px;
+      }
+    }
+    p{
+      margin: 20px 0 0;
+      font-size: 11px;
+      a{
+        color: #fff;
+      }
+    }
+  }
+  .text-center{
+    text-align: center;
+  }
+  .logo{
+    max-width: 220px;
+    margin: auto;
+    width: 100%;
+    display: block;
+  } 
+  .side-block1{
+    color: #fff;
+    background: url(https://attractgroup.com/wp-content/uploads/2021/01/Other-Top-E-Learning-Solution-Features.jpg), 
+    linear-gradient(135deg, #127cbf 0%,#094d9c 100%);
+    background-size: contain;
+    padding: 7% 0;
+  }
+  .side-block2{
+    padding: 25px;
+    h4{
+      margin: 0 0 10px;
+      font-size: 20px;
+      color:#4da3d4; 
+    }
+    p{
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+  .badge-logo{
+    width: 60px;
+    margin: 0 auto 10px;
+    display: block;
+  }
+  .flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  [align-center]{
+    align-items: center;
+  }
+  .form-group{
+    mat-form-field{
+      flex: 1;
+      width: 100%;
+      margin-left: 3%;
+    }
+    
+  }
+  .next-button{
+    text-align: right;
+  }
+  .form-field-set{
+    padding-top: 30px;
+    min-height: 400px;
+  }
+  .already-have-account{
+    margin-top: 20px;
+    .links{
+      cursor: pointer;
+      text-decoration: underline;
+      margin-left: 10px;
+    }
+  }
+  .links{
+    color:#4da3d4; 
+  }
+  .links:visited {
+    color: #4da3d4;
+  }
+  
+  @media (max-width:767px){
+    .side-block1{
+      display: none;
+    }
+  }
+  @media (max-width:480px){
+    .side-block2{
+      padding: 15px;
+    }
+    .form-field-set{
+      min-height: inherit;
+      padding: 10px 0 20px;
+      .flex-center{
+        display: block;
+      }
+    }
+    .already-have-account{
+      margin-top: 0;
+    }
+    .form-group{
+      mat-icon{
+        display: none;
+      }
+      mat-form-field{
+        width:100%;
+        max-width: 100%;
+        margin-left: 0%;
+      }
+    }
+    mat-form-field{
+      width: 100%;
+    }
+  }

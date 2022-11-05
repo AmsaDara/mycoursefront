@@ -1,0 +1,36 @@
+.image{
+    width: 500px;
+    height: 30px;
+}
+#one{
+    display: flex;
+
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    //gap: 20px;
+    //box-shadow: 0 0 4px 2px #ececec;
+}
+.oneone{
+    width: 50%;
+    height: auto;
+    color: gray;
+    size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 100;
+    // align-items: center;
+    // justify-content: center;
+    text-align: center;
+}
+.oneone > h2 {
+    text-decoration : underline;
+}
+.twotwo{
+    width: 50%;
+    height: auto;
+}
+.twotwo > img {
+    width: 420px;
+    height: auto;
+}

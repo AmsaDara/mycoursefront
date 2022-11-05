@@ -1,0 +1,80 @@
+<div class="page-wrap">
+	<mat-card class="container">
+		<img src="https://www.pngitem.com/pimgs/m/438-4389117_elearning-icon-svg-hd-png-download.png" alt="Company or Product Logo" class="logo" />
+		<form [formGroup]="loginForm" novalidate>
+			<mat-form-field>
+        <mat-icon color="primary" matPrefix>email</mat-icon>
+				<input matInput placeholder="Email Address" formControlName="email" type="email" required>
+			  <!-- <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+          email is <strong>required</strong>
+        </mat-error> -->
+      </mat-form-field>
+			<mat-form-field>
+        <mat-icon color="primary" matPrefix>locked</mat-icon>
+				<input matInput type="password" placeholder="Password" formControlName="password" required>
+			  <!-- <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+          Password is required <strong>required</strong>
+        </mat-error> -->
+      </mat-form-field>
+			<div class="text-center flex-center remember-me mat-typography">
+        <mat-card-actions>
+          <button [disabled]="!loginForm.valid" mat-raised-button color="primary" class="login" (click)="onSubmit()">LOG IN</button>
+        </mat-card-actions>
+      	<!-- <mat-checkbox class="text-center mat-typography" formControlName="rememberMe">Remember Me</mat-checkbox> -->
+      </div>
+<br/>
+      <div class="flex-center" mat-typography>
+				<a mat-button (click)="signUp" routerLink="/register" color="primary" href="">Sign Up</a>
+        <a mat-button (click)= "Password" routerLink="/forgot"color="primary" href="">Forgot Password</a>
+			</div>
+		</form>
+		<br/>
+		<img src="https://image.ibb.co/kzkCme/Logo_Samples2_91_min.jpg" alt="Cybersecurity Badge" class="badge-logo">
+		<div class="text-center mat-typography">
+			<h4>
+				En vous connectant, vous acceptez nos
+				<br/>
+
+				<a class="links"href="">Terms and Conditions</a> &
+				<a class ="links"href="">Politique de confidentialité</a>
+
+			</h4>
+
+		</div>
+	</mat-card>
+
+</div>
+
+
+<!-- <form [formGroup]="loginForm" novalidate>
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Sign in Please</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-icon color="primary" matPrefix>email</mat-icon>
+            <input type="email" matInput placeholder="email" formControlName="email" required>
+            <mat-error *ngIf="loginForm.controls['email'].hasError('required')">
+              email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-icon color="primary" matPrefix>locked</mat-icon>
+            <input type="password" matInput placeholder="password" formControlName="password" required>
+            <mat-error *ngIf="loginForm.controls['password'].hasError('required')">
+              Password is required <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form> -->

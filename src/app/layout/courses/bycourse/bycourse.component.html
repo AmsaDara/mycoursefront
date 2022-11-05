@@ -1,0 +1,39 @@
+<app-page-header icon="cast_for_education">
+  <h2>{{currentCourse.title}}</h2>
+  <button routerLink="/courses" mat-flat-button color="primary" class="action">
+    <mat-icon class="mr-2">cast_for_education</mat-icon>
+    <span>Go courses</span>
+  </button>
+</app-page-header>
+<div class="content">
+  <div class="content_course">
+    <div>
+      <img [src]="currentCourse.cover" alt="cover">
+    </div>
+    <p>
+      {{currentCourse.description}}
+    </p>
+  </div>
+  
+  <section>
+    <aside>
+      <mat-accordion class="panei-direction">
+        <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+             Student Online
+            </mat-panel-title>
+            <mat-panel-description>
+              Voir les utilisateur en ligne {{panelOpenState ? 'open' : 'closed'}}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <p>{{currentStudent?.fullusername}}</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </aside>
+  
+  </section>
+  
+  
+</div>
